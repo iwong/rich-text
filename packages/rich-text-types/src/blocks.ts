@@ -17,7 +17,8 @@ export enum BLOCKS {
   LIST_ITEM = 'list-item',
 
   HR = 'hr',
-  QUOTE = 'blockquote',
+  QUOTE = 'quote',
+  BLOCKQUOTE = 'blockquote',
 
   EMBEDDED_ENTRY = 'embedded-entry-block',
   EMBEDDED_ASSET = 'embedded-asset-block',

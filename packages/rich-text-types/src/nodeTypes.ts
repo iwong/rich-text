@@ -55,6 +55,14 @@ export interface Quote extends Block {
   data: EmptyNodeData;
   content: Paragraph[];
 }
+
+// Blockquote
+export interface Blockquote extends Block {
+  nodeType: BLOCKS.BLOCKQUOTE;
+  data: EmptyNodeData;
+  content: Paragraph[];
+}
+
 // Horizontal rule
 export interface Hr extends Block {
   nodeType: BLOCKS.HR;

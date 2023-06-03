@@ -51,6 +51,7 @@ const blockSymbolsMap = new Map([
   [BLOCKS.LIST_ITEM, 'ListItem'],
   [BLOCKS.HR, 'Hr'],
   [BLOCKS.QUOTE, 'Quote'],
+  [BLOCKS.BLOCKQUOTE, 'Blockquote'],
   [BLOCKS.EMBEDDED_ENTRY, 'EntryLinkBlock'],
   [BLOCKS.EMBEDDED_ASSET, 'AssetLinkBlock'],
   [BLOCKS.EMBEDDED_RESOURCE, 'ResourceLinkBlock'],

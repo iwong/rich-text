@@ -1,23 +1,24 @@
 {
-  "$ref": "#/definitions/Document",
+  "$ref": "#/definitions/Quote",
   "definitions": {
-    "Document": {
+    "Quote": {
       "type": "object",
       "properties": {
         "nodeType": {
           "type": "string",
           "enum": [
-            "document"
+            "quote"
           ]
         },
+        "data": {
+          "type": "object",
+          "properties": {}
+        },
         "content": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/TopLevelBlock"
+            "$ref": "#/definitions/Paragraph"
           }
-        },
-        "data": {
-          "$ref": "#/definitions/NodeData"
         }
       },
       "additionalProperties": false,
@@ -27,19 +28,23 @@
         "nodeType"
       ]
     },
-    "TopLevelBlock": {
+    "Paragraph": {
       "type": "object",
       "properties": {
         "nodeType": {
-          "$ref": "#/definitions/TopLevelBlockEnum"
+          "type": "string",
+          "enum": [
+            "paragraph"
+          ]
+        },
+        "data": {
+          "type": "object",
+          "properties": {}
         },
         "content": {
           "type": "array",
           "items": {
             "anyOf": [
-              {
-                "$ref": "#/definitions/Block"
-              },
               {
                 "$ref": "#/definitions/Inline"
               },
@@ -48,9 +53,6 @@
               }
             ]
           }
-        },
-        "data": {
-          "$ref": "#/definitions/NodeData"
         }
       },
       "additionalProperties": false,
@@ -59,87 +61,6 @@
         "data",
         "nodeType"
       ]
-    },
-    "TopLevelBlockEnum": {
-      "enum": [
-        "blockquote",
-        "embedded-asset-block",
-        "embedded-entry-block",
-        "embedded-resource-block",
-        "heading-1",
-        "heading-2",
-        "heading-3",
-        "heading-4",
-        "heading-5",
-        "heading-6",
-        "hr",
-        "ordered-list",
-        "paragraph",
-        "quote",
-        "table",
-        "unordered-list"
-      ],
-      "type": "string"
-    },
-    "Block": {
-      "type": "object",
-      "properties": {
-        "nodeType": {
-          "$ref": "#/definitions/BLOCKS"
-        },
-        "content": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/Block"
-              },
-              {
-                "$ref": "#/definitions/Inline"
-              },
-              {
-                "$ref": "#/definitions/Text"
-              }
-            ]
-          }
-        },
-        "data": {
-          "$ref": "#/definitions/NodeData"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "content",
-        "data",
-        "nodeType"
-      ]
-    },
-    "BLOCKS": {
-      "description": "Map of all Contentful block types. Blocks contain inline or block nodes.",
-      "enum": [
-        "blockquote",
-        "document",
-        "embedded-asset-block",
-        "embedded-entry-block",
-        "embedded-resource-block",
-        "heading-1",
-        "heading-2",
-        "heading-3",
-        "heading-4",
-        "heading-5",
-        "heading-6",
-        "hr",
-        "list-item",
-        "ordered-list",
-        "paragraph",
-        "quote",
-        "table",
-        "table-cell",
-        "table-header-cell",
-        "table-row",
-        "unordered-list"
-      ],
-      "type": "string"
     },
     "Inline": {
       "type": "object",

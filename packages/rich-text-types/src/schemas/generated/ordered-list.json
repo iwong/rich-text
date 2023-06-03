@@ -103,6 +103,7 @@
         "hr",
         "ordered-list",
         "paragraph",
+        "quote",
         "unordered-list"
       ],
       "type": "string"
@@ -158,6 +159,7 @@
         "list-item",
         "ordered-list",
         "paragraph",
+        "quote",
         "table",
         "table-cell",
         "table-header-cell",

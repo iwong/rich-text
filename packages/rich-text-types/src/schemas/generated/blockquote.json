@@ -1,7 +1,7 @@
 {
-  "$ref": "#/definitions/Quote",
+  "$ref": "#/definitions/Blockquote",
   "definitions": {
-    "Quote": {
+    "Blockquote": {
       "type": "object",
       "properties": {
         "nodeType": {
